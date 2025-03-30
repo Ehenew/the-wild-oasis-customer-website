@@ -3,8 +3,6 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 function Filter() {
-  // How can we get the filter searchParams from the client component back to the url so that the server component(cabins page) can use it
-
   const searchParams = useSearchParams();
   const router = useRouter(); // ensure you are importing useRouter from next/navigation not from next/router
   const pathname = usePathname();

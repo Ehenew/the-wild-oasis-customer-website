@@ -4,11 +4,9 @@ import Spinner from "@/app/_components/Spinner";
 import { Suspense } from "react";
 import ReservationReminder from "../_components/ReservationReminder";
 
-// In production, all static pages are cached and changes in the remote database could not be reflected to the client b/c of the so-called data cache. But likely for us there is a way to convert the page to dynamic by revalidating the page
-// export const revalidate = 0; // and this is all
 
-// However, in most cases our pages does not chang every second, may be some pages will change within a day, an hour or in a month, it depends on the type of the project
-export const revalidate = 3600; // exactly 1 hour, however this has no effect as we are using searchParams this page is always dynamic any way
+export const revalidate = 3600;
+
 
 export const metadata = {
   title: 'Cabins'
@@ -16,8 +14,7 @@ export const metadata = {
 
 // Server component
 export default async function Page({ searchParams }) {
-  // searchParams are only availbale to page.js files not on other server components
-  // Await searchParams to properly handle its dynamic nature
+
   const filter = (await searchParams?.capacity) || 'all';
 
   return (

@@ -8,7 +8,6 @@ function UpdateProfileForm({ guest, children }) {
   const [count, setCount] = useState();
   const { fullName, email, nationalID, countryFlag } = guest;
 
-
   // To get the form data back to the server action we use the native formData api, they will automatically pass the form data back to the server action we created. Form the formData to work as expected we have to give a unique names (as in the database) to each form inputs
   return (
     <form action={updateGuest} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
@@ -60,20 +59,5 @@ function UpdateProfileForm({ guest, children }) {
     </form>
   );
 }
-
-
-// useFormStatus()
-// Note: useFormStatus -> must be used in a component that is rendered inside a form, not in a component that simply contains a form, that is why i moved the update button in to its own component
-// Refactored to its own component with SubmitButton
-// function Button() {
-//   const { pending } = useFormStatus(); // we can also get the form data in addition to the pending state
-
-//   return <button
-//     className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300"
-//     disabled={pending}
-//   >
-//     {pending ? 'Updating' : 'Update profile'}
-//   </button>;
-// }
 
 export default UpdateProfileForm;

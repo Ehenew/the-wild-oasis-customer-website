@@ -5,19 +5,6 @@ import { useTransition } from 'react';
 import SpinnerMini from './SpinnerMini';
 
 function DeleteReservation({ bookingId, onDelete }) {
-  // There are two options for performing server actions:
-  // 1. Calling the server action inside a form on server components
-  // 2. Calling the server action upon user interaction, like a button click on client components
-
-  // if you are going to write the server action inside a component, then you have to put the 'use server' direct inside the function
-  // function deleteReservation(bookingId) {
-  //   'use server'
-  //   // CODE
-  // }
-
-
-
-  // this time we are invoking the server action from a button not from a form, and so we cannot use useFormStatus hook on this but at the same time we want to show the user some loading indicater so that an action is being performed in the background, then How? Well likely for us we have the useTransion React 18 hook for 
 
   const [isPending, startTransition] = useTransition();
 
