@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme('colors.primary.900');
+    border-right-color: theme('colors.primary.200');
+    -webkit-animation: rotate 1s infinite linear;
+            animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme('colors.primary.200');
+    border-right-color: transparent;
+    -webkit-animation: rotate 1s infinite linear;
+            animation: rotate 1s infinite linear;
+  }
+
+  @-webkit-keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+/* For date picker */
+.rdp {
+  --rdp-cell-size: 12px !important;
+  --rdp-accent-color: theme('colors.accent.500') !important;
+  --rdp-background-color: theme('colors.accent.600') !important;
+  margin: 0 !important;
+
+}
+
+.rdp .rdp-months {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem;
+}
+
+.rdp-months table thead tbody{
+  max-width: 100px;
+}
+
+.rdp-month_grid{
+  gap: 1px;
+}
+
+.dayPicker {
+  gap: 2px; /* Adjust this value as needed */
+}
+
+.dayPicker-wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for each day */
+  gap: 2px; /* Decrease the gap between days */
+}
